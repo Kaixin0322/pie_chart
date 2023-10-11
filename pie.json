@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A pie chart representing housing types in Melbourne 2021 estimates",
+    "width": 800,
+    "height": 500,
+    "data": {
+      "values": [
+        {"HousingType": "Detached Houses", "Percentage": 65},
+        {"HousingType": "Apartments", "Percentage": 22.5},
+        {"HousingType": "Terrace Houses and Townhouses", "Percentage": 7.5},
+        {"HousingType": "Others", "Percentage": 5}
+      ]
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+      "color": {
+        "field": "HousingType",
+        "type": "nominal",
+        "legend": {"title": "Housing Types in Melbourne"}
+      },
+      "tooltip": [
+        {"field": "HousingType", "type": "nominal", "title": "Housing Type"},
+        {"field": "Percentage", "type": "quantitative", "title": "Percentage"}
+      ]
+    },
+    "view": {"stroke": null}
+  }
+  
